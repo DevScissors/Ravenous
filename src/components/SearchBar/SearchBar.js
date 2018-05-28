@@ -48,7 +48,7 @@ import './SearchBar.css';
     }
 
       renderSortByOptions () {
-        return this.sortByOptions.keys(this.sortByOptions).map(sortByOption => {
+        return Object.keys(this.sortByOptions).map(sortByOption => {
             let sortByOptionValue = this.sortByOptions[sortByOption];
             return <li className={this.getSortByClass(sortByOptionValue)} onClick={this.handleSortByChange.bind(this, sortByOptionValue)} key={sortByOptionValue}>{sortByOption}</li>;
         });
@@ -58,7 +58,7 @@ import './SearchBar.css';
             <div className="SearchBar">
             <div className="SearchBar-sort-options">
               <ul>
-                {this.renderSortByOptions}
+                {this.renderSortByOptions()}
               </ul>
             </div>
             <div className="SearchBar-fields">
